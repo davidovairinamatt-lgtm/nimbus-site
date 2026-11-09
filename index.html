@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nimbus — лаунчер и клиент для Minecraft 1.21.11</title>
+<meta name="description" content="Nimbus — лаунчер и клиент для Minecraft 1.21.11 на Fabric: аккаунт с любого ПК, каталог Modrinth, автоматическая установка игры, HUD, 26 модулей, тёмный установщик и логи.">
+<meta name="theme-color" content="#07080d">
+<link rel="icon" href="assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="aurora" aria-hidden="true">
+  <span class="blob b1"></span>
+  <span class="blob b2"></span>
+  <span class="blob b3"></span>
+</div>
+
+<header class="nav" id="top">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top">
+      <img src="assets/icon.png" alt="Nimbus" width="34" height="34">
+      <span>Nimbus</span>
+    </a>
+    <nav class="nav-links" aria-label="Основная навигация">
+      <a href="#features">Возможности</a>
+      <a href="#catalog">Каталог</a>
+      <a href="#client">Клиент</a>
+      <a href="#download">Скачать</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="theme-dots" id="themeDots" aria-label="Тема оформления"></div>
+      <a class="btn btn-ghost nav-account" href="account.html">Войти</a>
+      <a class="btn btn-primary nav-download" href="#download">Скачать</a>
+      <button class="nav-burger" id="navBurger" type="button" aria-label="Открыть меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Мобильная навигация">
+    <a href="#features">Возможности</a>
+    <a href="#catalog">Каталог</a>
+    <a href="#client">Клиент</a>
+    <a href="#download">Скачать</a>
+    <a href="#faq">FAQ</a>
+    <a href="account.html">Личный кабинет</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <div class="hero-copy">
+      <span class="badge"><i class="dot"></i> Windows 10/11 · Minecraft 1.21.11 · Fabric 0.20.1</span>
+      <h1>Minecraft,<br>который просто<br><span class="grad">работает.</span></h1>
+      <p class="lead">Nimbus — лаунчер и клиент в одном. Аккаунт с любого ПК, каталог Modrinth, автоматическая установка Minecraft и Fabric, тёмный установщик и меню на Right Shift.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="https://github.com/davidovairinamatt-lgtm/nimbus-site/releases/download/v1.3.2/NimbusLauncher-Setup-1.3.2.exe">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+          Скачать установщик
+        </a>
+        <a class="btn btn-ghost" href="#features">Что внутри</a>
+      </div>
+      <dl class="stats">
+        <div><dt>20 000+</dt><dd>модов Modrinth</dd></div>
+        <div><dt>26</dt><dd>модулей клиента</dd></div>
+        <div><dt>1.21.11</dt><dd>Fabric 0.20.1</dd></div>
+        <div><dt>0 ₽</dt><dd>без подписки</dd></div>
+      </dl>
+      <div class="hero-note">
+        <span class="pill">v1.3.2</span>
+        <span>Установщик без прав администратора</span>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <div class="art-glow" aria-hidden="true"></div>
+      <div class="shot shot-main">
+        <div class="shot-bar"><i></i><i></i><i></i><span>Nimbus Launcher</span></div>
+        <img src="assets/launcher-home.png" alt="Главный экран Nimbus Launcher" loading="eager">
+      </div>
+      <div class="shot shot-mini">
+        <img src="assets/installer.png" alt="Установщик Nimbus" loading="lazy">
+      </div>
+      <span class="hero-version">v1.3.2</span>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>MODRINTH</span><span>·</span><span>FABRIC 0.20.1</span><span>·</span><span>АККАУНТЫ</span><span>·</span><span>HUD</span><span>·</span><span>26 МОДУЛЕЙ</span><span>·</span><span>УСТАНОВЩИК</span><span>·</span><span>ЛОГИ</span><span>·</span><span>1.21.11</span><span>·</span>
+      <span>MODRINTH</span><span>·</span><span>FABRIC 0.20.1</span><span>·</span><span>АККАУНТЫ</span><span>·</span><span>HUD</span><span>·</span><span>26 МОДУЛЕЙ</span><span>·</span><span>УСТАНОВЩИК</span><span>·</span><span>ЛОГИ</span><span>·</span><span>1.21.11</span><span>·</span>
+    </div>
+  </div>
+
+  <section class="section wrap" id="features">
+    <div class="section-head reveal">
+      <span class="eyebrow">Возможности</span>
+      <h2>Всё для игры — <span class="grad">в одном окне</span></h2>
+      <p>Лаунчер решает рутину, клиент отвечает за картинку. Никаких десятков установщиков и ручной сборки.</p>
+    </div>
+
+    <div class="grid features">
+      <article class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="3" y="13" width="7" height="7" rx="1.5"/><rect x="14" y="13" width="7" height="7" rx="1.5"/></svg></div>
+        <h3>Каталог Modrinth</h3>
+        <p>Моды, модпаки, ресурспаки, датапаки и шейдеры. Поиск, сортировка, фильтр под 1.21.11 и установка в один клик.</p>
+        <div class="tags"><span>20 000+</span><span>Fabric</span><span>Зависимости</span></div>
+      </article>
+
+      <article class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 21c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg></div>
+        <h3>Один аккаунт</h3>
+        <p>Вход по нику и паролю без почты. Аккаунт живёт на сервере, поэтому работает на любом компьютере с лаунчером.</p>
+        <div class="tags"><span>Синхронизация</span><span>UUID</span><span>Сессии</span></div>
+      </article>
+
+      <article class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg></div>
+        <h3>Minecraft сам</h3>
+        <p>Клиент, библиотеки, ресурсы и Fabric Loader 0.20.1 скачиваются автоматически. Прогресс и понятные ошибки — на экране.</p>
+        <div class="tags"><span>1.21.11</span><span>Java 21</span><span>Автоустановка</span></div>
+      </article>
+
+      <article class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/><circle cx="9" cy="7" r="2"/><circle cx="15" cy="12" r="2"/><circle cx="8" cy="17" r="2"/></svg></div>
+        <h3>Меню Nimbus</h3>
+        <p>Right Shift открывает стеклянное меню: 26 модулей, HUD, темы и настройки, которые применяются сразу и сохраняются сами.</p>
+        <div class="tags"><span>26 модулей</span><span>HUD</span><span>9 тем</span></div>
+      </article>
+
+      <article class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/><path d="m9 9 3 3 3-3"/></svg></div>
+        <h3>Свой установщик</h3>
+        <p>Тёмное окно с логотипом, прогрессом и кнопкой «Запустить». Ставится в папку пользователя, без прав администратора.</p>
+        <div class="tags"><span>NSIS</span><span>Ярлыки</span><span>Удаление</span></div>
+      </article>
+
+      <article class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 14h8M8 18h5"/></svg></div>
+        <h3>Логи и обновления</h3>
+        <p>Отдельные логи лаунчера и Minecraft, обновление модов, удаление проектов и восстановление игры без потери аккаунта.</p>
+        <div class="tags"><span>Логи</span><span>Обновления</span><span>Мои проекты</span></div>
+      </article>
+    </div>
+
+    <div class="chips-row">
+      <span>Modrinth</span><span>Fabric 0.20.1</span><span>Minecraft 1.21.11</span><span>HUD Nimbus</span><span>Fullbright</span><span>Прицел</span><span>Частицы</span><span>ESP</span><span>Темы</span><span>Снежинки</span><span>Плавный обзор</span><span>FPS Boost</span><span>Установщик</span><span>Логи</span>
+    </div>
+  </section>
+
+  <section class="section wrap" id="catalog">
+    <div class="section-head reveal">
+      <span class="eyebrow">Каталог</span>
+      <h2>Моды — <span class="grad">прямо из лаунчера</span></h2>
+      <p>Не нужно открывать браузер и искать совместимую версию. Nimbus показывает только то, что подходит к твоей сборке.</p>
+    </div>
+
+    <div class="split">
+      <div class="split-copy reveal">
+        <h3>20 000+ проектов Modrinth</h3>
+        <ul class="check-list">
+          <li>Поиск по названию, автору и описанию</li>
+          <li>Сортировка по загрузкам, подпискам и обновлению</li>
+          <li>Категории: моды, модпаки, ресурспаки, датапаки, шейдеры</li>
+          <li>Фильтр Minecraft 1.21.11 и Fabric включён по умолчанию</li>
+          <li>Обязательные зависимости ставятся автоматически</li>
+          <li>Установленные проекты можно удалить из «Моих проектов»</li>
+        </ul>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#download">Скачать лаунчер</a>
+          <a class="btn btn-ghost" href="#client">Посмотреть клиент</a>
+        </div>
+      </div>
+      <div class="shot shot-wide reveal">
+        <img src="assets/launcher-mods.png" alt="Каталог модов Modrinth в Nimbus Launcher" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="client">
+    <div class="section-head reveal">
+      <span class="eyebrow">Клиент</span>
+      <h2>Меню на <span class="grad">Right Shift</span></h2>
+      <p>Категории, модули и настройки в одном стеклянном окне. Всё, что меняется, сразу видно в игре.</p>
+    </div>
+
+    <div class="split reverse">
+      <div class="menu-mock reveal">
+        <aside class="mm-side">
+          <div class="mm-logo"><img src="assets/icon.png" alt=""><b>Nimbus</b></div>
+          <nav>
+            <a class="on">Все модули</a>
+            <a>Камера</a>
+            <a>Визуал</a>
+            <a>HUD</a>
+            <a>Мир</a>
+            <a>Производительность</a>
+          </nav>
+          <div class="mm-user"><span>Player</span><em>1.21.11</em></div>
+        </aside>
+        <div class="mm-list">
+          <div class="mm-search">Поиск модуля…</div>
+          <div class="mm-item on"><span>Fullbright</span><i></i></div>
+          <div class="mm-item on"><span>Прицел</span><i></i></div>
+          <div class="mm-item on"><span>Частицы</span><i></i></div>
+          <div class="mm-item on"><span>HUD Nimbus</span><i></i></div>
+          <div class="mm-item on"><span>Снежинки</span><i></i></div>
+          <div class="mm-item"><span>ESP сущностей</span><i></i></div>
+          <div class="mm-item on"><span>Темы</span><i></i></div>
+          <div class="mm-item"><span>Цвет неба</span><i></i></div>
+        </div>
+        <div class="mm-panel">
+          <div class="mm-title">Прицел <span class="mm-key">RShift</span></div>
+          <div class="mm-row"><span>Размер</span><b>18</b></div>
+          <div class="mm-slider"><i style="width:58%"></i></div>
+          <div class="mm-row"><span>Точка</span><b class="on">Вкл</b></div>
+          <div class="mm-row"><span>Анимация</span><b class="on">Вкл</b></div>
+          <div class="mm-row"><span>Цвет</span><span class="mm-swatch"></span></div>
+          <div class="mm-row"><span>Режим</span><b>Плавный</b></div>
+          <div class="mm-foot">Настройки сохраняются автоматически</div>
+        </div>
+      </div>
+
+      <div class="split-copy reveal">
+        <h3>26 модулей и живой HUD</h3>
+        <ul class="check-list">
+          <li>Меню на Right Shift, конфиг сохраняется сам</li>
+          <li>FPS, пинг, координаты, скорость и время в HUD</li>
+          <li>Полная яркость, прицел, частицы, снег и след</li>
+          <li>ESP игроков и блоков, ники, плавный обзор</li>
+          <li>Темы, цвет неба и настройки под свой вкус</li>
+          <li>FPS Boost и бюджет кадра для слабых ПК</li>
+        </ul>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#download">Скачать Nimbus</a>
+          <a class="btn btn-ghost" href="account.html">Личный кабинет</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="themes">
+    <div class="section-head reveal">
+      <span class="eyebrow">Темы</span>
+      <h2>Девять палитр. <span class="grad">Один клик.</span></h2>
+      <p>Нажми на цвет — сайт перекрасится так же, как меню в игре.</p>
+    </div>
+    <div class="themes-grid" id="themesGrid">
+      <button class="theme-card" data-a="7C5CFF" data-b="3FE0D0" data-sky="7FA8FF"><span class="sw" style="--x:#7C5CFF;--y:#3FE0D0"></span><b>Nimbus</b><em>фиолетовый / бирюза</em></button>
+      <button class="theme-card" data-a="FF5C9E" data-b="FFC2E0" data-sky="FF9BC4"><span class="sw" style="--x:#FF5C9E;--y:#FFC2E0"></span><b>Роза</b><em>розовый закат</em></button>
+      <button class="theme-card" data-a="3FA0FF" data-b="6EE7FF" data-sky="4FA8FF"><span class="sw" style="--x:#3FA0FF;--y:#6EE7FF"></span><b>Океан</b><em>глубина</em></button>
+      <button class="theme-card" data-a="FF8A3C" data-b="FFC857" data-sky="FF9E5E"><span class="sw" style="--x:#FF8A3C;--y:#FFC857"></span><b>Закат</b><em>тёплый свет</em></button>
+      <button class="theme-card" data-a="3FE0A0" data-b="C6E84B" data-sky="7FE8C8"><span class="sw" style="--x:#3FE0A0;--y:#C6E84B"></span><b>Мята</b><em>свежий</em></button>
+      <button class="theme-card" data-a="8A90A6" data-b="C6CDDF" data-sky="9AA2B8"><span class="sw" style="--x:#8A90A6;--y:#C6CDDF"></span><b>Монохром</b><em>минимализм</em></button>
+      <button class="theme-card" data-a="5C6CFF" data-b="9E7BFF" data-sky="3C4C9E"><span class="sw" style="--x:#5C6CFF;--y:#9E7BFF"></span><b>Полночь</b><em>синий час</em></button>
+      <button class="theme-card" data-a="E05EE8" data-b="FF8A5E" data-sky="C6A0FF"><span class="sw" style="--x:#E05EE8;--y:#FF8A5E"></span><b>Карамель</b><em>яркий микс</em></button>
+      <button class="theme-card" data-a="rainbow" data-b="3FE0D0" data-sky="7FA8FF"><span class="sw rainbow"></span><b>Радуга</b><em>анимированный</em></button>
+    </div>
+  </section>
+
+  <section class="section wrap" id="download">
+    <div class="section-head reveal">
+      <span class="eyebrow">Загрузки</span>
+      <h2>Скачай и <span class="grad">играй</span></h2>
+      <p>Установщик — самый простой путь. Portable и отдельный jar — для тех, кто любит контроль.</p>
+    </div>
+
+    <div class="download-grid">
+      <article class="download-card featured reveal">
+        <span class="dl-badge">Рекомендуем</span>
+        <h3>Установщик Nimbus Launcher</h3>
+        <p>Windows 10/11 · 1.3.2 · 81,9 МБ</p>
+        <div class="hash-line"><code>A0569B4A458C230A13FC14C9173CEA518A41737A2AF62D111C8C799278A21878</code><button class="copy-btn" type="button" data-copy="A0569B4A458C230A13FC14C9173CEA518A41737A2AF62D111C8C799278A21878" aria-label="Скопировать SHA256">Копировать</button></div>
+        <div class="dl-actions">
+          <a class="btn btn-primary" href="https://github.com/davidovairinamatt-lgtm/nimbus-site/releases/download/v1.3.2/NimbusLauncher-Setup-1.3.2.exe">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+            Скачать установщик
+          </a>
+        </div>
+        <small>Без прав администратора. SmartScreen: «Подробнее → Выполнить всё равно».</small>
+      </article>
+
+      <article class="download-card reveal">
+        <h3>Portable ZIP</h3>
+        <p>Windows x64 · 1.3.2 · 112,5 МБ</p>
+        <div class="hash-line"><code>CD04232E3CF87C94D79CB3F24C7ECDCBE2DFE35090C3665B45052D517396341C</code><button class="copy-btn" type="button" data-copy="CD04232E3CF87C94D79CB3F24C7ECDCBE2DFE35090C3665B45052D517396341C" aria-label="Скопировать SHA256">Копировать</button></div>
+        <div class="dl-actions">
+          <a class="btn btn-ghost" href="https://github.com/davidovairinamatt-lgtm/nimbus-site/releases/download/v1.3.2/NimbusLauncher-1.3.2-win32-x64.zip">Скачать архив</a>
+        </div>
+        <small>Распакуй в любую папку и запусти NimbusLauncher.exe.</small>
+      </article>
+
+      <article class="download-card reveal">
+        <h3>Nimbus Client 2.0.4</h3>
+        <p>Minecraft 1.21.11 · Fabric · 321 КБ</p>
+        <div class="hash-line"><code>648BDBF2BED8AB65503F18584477B5BAB2E6A421D5D98E5757A1C3A1B5F12499</code><button class="copy-btn" type="button" data-copy="648BDBF2BED8AB65503F18584477B5BAB2E6A421D5D98E5757A1C3A1B5F12499" aria-label="Скопировать SHA256">Копировать</button></div>
+        <div class="dl-actions">
+          <a class="btn btn-ghost" href="downloads/premium-nimbus-visual-1.21.11-2.0.4.jar" download>Скачать jar</a>
+        </div>
+        <small>Для ручной установки в папку mods. В лаунчере уже встроен.</small>
+      </article>
+    </div>
+    <p class="download-note">Контрольные суммы всех файлов: <a href="downloads/SHA256SUMS.txt" target="_blank" rel="noopener">SHA256SUMS.txt</a></p>
+  </section>
+
+  <section class="section wrap" id="install">
+    <div class="section-head reveal">
+      <span class="eyebrow">Установка</span>
+      <h2>Три шага — и <span class="grad">в игре</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <span class="num">01</span>
+        <h3>Скачай установщик</h3>
+        <p>Загрузи <code>NimbusLauncher-Setup-1.3.2.exe</code>. Права администратора не нужны.</p>
+      </div>
+      <div class="step reveal">
+        <span class="num">02</span>
+        <h3>Установи и запусти</h3>
+        <p>Нажми «Установить», затем «Запустить». Ярлыки появятся на рабочем столе и в «Пуске».</p>
+      </div>
+      <div class="step reveal">
+        <span class="num">03</span>
+        <h3>Войди и играй</h3>
+        <p>Введи ник и пароль, нажми «Играть». Minecraft 1.21.11, Fabric и моды скачаются сами.</p>
+      </div>
+    </div>
+
+    <div class="requirements reveal">
+      <div><b>Windows</b><span>10 или 11, x64</span></div>
+      <div><b>Java</b><span>21+ (лаунчер ищет сам)</span></div>
+      <div><b>Место</b><span>около 1 ГБ + игра</span></div>
+      <div><b>Интернет</b><span>для Modrinth и аккаунта</span></div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="account">
+    <div class="account-cta reveal">
+      <div class="account-cta-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 21c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg>
+      </div>
+      <div class="account-cta-copy">
+        <h2>Один аккаунт — любой ПК</h2>
+        <p>Зарегистрируйся на сервере Nimbus и входи с любого компьютера. Ник, пароль и UUID игрока — без почты и лишних шагов.</p>
+      </div>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="account.html">Личный кабинет</a>
+        <a class="btn btn-ghost" href="account.html#register">Создать аккаунт</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="changelog">
+    <div class="section-head reveal">
+      <span class="eyebrow">Changelog</span>
+      <h2>Что <span class="grad">нового</span></h2>
+    </div>
+    <div class="changelog">
+      <article class="release reveal">
+        <div class="release-tag">1.3.2 <span>установщик</span></div>
+        <p>Новый фирменный установщик с прогрессом и кнопкой запуска. Установка без прав администратора, ярлыки и удаление. Fabric Loader 0.20.1, удаление проектов и восстановление WalksyLib.</p>
+      </article>
+      <article class="release reveal">
+        <div class="release-tag">1.3.0 <span>каталог</span></div>
+        <p>Панель Modrinth: 20 000+ проектов, поиск, сортировка, вкладки, карточки, установка модов и зависимостей, «Мои проекты».</p>
+      </article>
+      <article class="release reveal">
+        <div class="release-tag">1.2.0 <span>лаунчер</span></div>
+        <p>Запуск Minecraft 1.21.11 и Fabric, меню логов, прогресс, состояния «Скачивание Nimbus / Запущено», первый установщик.</p>
+      </article>
+      <article class="release reveal">
+        <div class="release-tag">2.0.4 <span>клиент</span></div>
+        <p>Аврора-меню на Right Shift, HUD Premium, 26 модулей, ESP, снежинки, следы, темы и FPS Boost.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section wrap" id="faq">
+    <div class="section-head reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2>Коротко о <span class="grad">главном</span></h2>
+    </div>
+    <div class="faq">
+      <details class="reveal">
+        <summary>Нужен ли отдельный Minecraft?</summary>
+        <p>Нет. Лаунчер сам скачает Minecraft 1.21.11, Fabric и библиотеки в отдельную папку. Если игра уже установлена, файлы переиспользуются.</p>
+      </details>
+      <details class="reveal">
+        <summary>Нужна ли Java?</summary>
+        <p>Да, Java 21 или новее. Лаунчер ищет её в JAVA_HOME, PATH, Adoptium и TLauncher. Если Java нет — покажет понятную ошибку.</p>
+      </details>
+      <details class="reveal">
+        <summary>Где хранится аккаунт?</summary>
+        <p>На сервере аккаунтов Nimbus. Укажи его адрес в настройках лаунчера — и вход будет работать на другом ПК. Пароль хранится в виде scrypt-хэша.</p>
+      </details>
+      <details class="reveal">
+        <summary>Какие моды можно ставить?</summary>
+        <p>Любые проекты Modrinth для Minecraft 1.21.11 и Fabric. Фильтр включён по умолчанию, обязательные зависимости скачиваются автоматически.</p>
+      </details>
+      <details class="reveal">
+        <summary>Установщик просит права администратора?</summary>
+        <p>Нет. Он ставит лаунчер в <code>%LOCALAPPDATA%\Programs\Nimbus Launcher</code>, создаёт ярлыки и запись в «Установленных приложениях» для текущего пользователя.</p>
+      </details>
+      <details class="reveal">
+        <summary>Windows пишет «Не удалось проверить издателя»</summary>
+        <p>Установщик не подписан. Нажми «Подробнее» → «Выполнить всё равно». Это стандартное предупреждение SmartScreen для новых сборок.</p>
+      </details>
+      <details class="reveal">
+        <summary>Как удалить лаунчер?</summary>
+        <p>«Параметры → Приложения → Nimbus Launcher → Удалить» или ярлык «Удалить Nimbus Launcher». Аккаунт, логи и скачанный Minecraft в <code>%APPDATA%</code> останутся.</p>
+      </details>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="brand">
+      <img src="assets/icon.png" alt="Nimbus" width="34" height="34">
+      <span>Nimbus</span>
+    </div>
+    <p>Лаунчер и клиент для Minecraft 1.21.11.</p>
+    <div class="footer-links">
+      <a href="https://t.me/keyraft" target="_blank" rel="noopener">Telegram @keyraft</a>
+      <a href="account.html">Личный кабинет</a>
+      <a href="#download">Скачать</a>
+      <span>MIT © 2026</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" hidden></div>
+<script src="script.js"></script>
+</body>
+</html>
