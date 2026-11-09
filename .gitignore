@@ -1,0 +1,8 @@
+# Large binaries are published as GitHub Release assets, not in the repo.
+downloads/*.exe
+downloads/*.zip
+
+# OS junk
+Thumbs.db
+Desktop.ini
+.DS_Store

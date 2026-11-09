@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Личный кабинет — Nimbus</title>
+<meta name="description" content="Вход и регистрация в Nimbus. Тот же аккаунт, что в лаунчере: ник, пароль и UUID игрока на любом ПК.">
+<meta name="theme-color" content="#07080d">
+<link rel="icon" href="assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="account-page">
+<div class="aurora" aria-hidden="true">
+  <span class="blob b1"></span>
+  <span class="blob b2"></span>
+  <span class="blob b3"></span>
+</div>
+
+<header class="nav" id="top">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html">
+      <img src="assets/icon.png" alt="Nimbus" width="34" height="34">
+      <span>Nimbus</span>
+    </a>
+    <nav class="nav-links" aria-label="Навигация">
+      <a href="index.html">Главная</a>
+      <a href="index.html#catalog">Каталог</a>
+      <a href="index.html#download">Скачать</a>
+      <a href="index.html#faq">FAQ</a>
+      <a class="active" href="account.html">Личный кабинет</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-ghost nav-account" href="index.html#download">Скачать</a>
+      <a class="btn btn-primary" href="index.html">На главную</a>
+      <button class="nav-burger" id="navBurger" type="button" aria-label="Открыть меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Мобильная навигация">
+    <a href="index.html">Главная</a>
+    <a href="index.html#catalog">Каталог</a>
+    <a href="index.html#download">Скачать</a>
+    <a href="index.html#faq">FAQ</a>
+    <a href="account.html">Личный кабинет</a>
+  </nav>
+</header>
+
+<main class="account-main wrap">
+  <div class="account-hero">
+    <span class="eyebrow">Nimbus Account</span>
+    <h1>Личный кабинет</h1>
+    <p>Тот же аккаунт, что в лаунчере. Войди с любого ПК — ник, пароль и UUID останутся прежними.</p>
+  </div>
+
+  <section class="account-card" aria-live="polite">
+    <div id="authView">
+      <div class="account-tabs" role="tablist" aria-label="Вход или регистрация">
+        <button type="button" class="account-tab active" data-auth-tab="login" role="tab" aria-selected="true">Вход</button>
+        <button type="button" class="account-tab" data-auth-tab="register" role="tab" aria-selected="false">Регистрация</button>
+      </div>
+
+      <form id="authForm" class="account-form" autocomplete="on" novalidate>
+        <label class="account-field">
+          <span>Ник</span>
+          <input id="username" class="account-input" name="username" type="text" maxlength="16" placeholder="Player" autocomplete="username" required>
+        </label>
+        <label class="account-field">
+          <span>Пароль</span>
+          <input id="password" class="account-input" name="password" type="password" maxlength="128" placeholder="••••••••" autocomplete="current-password" required>
+        </label>
+        <label class="account-field" id="repeatField" hidden>
+          <span>Повтори пароль</span>
+          <input id="repeat" class="account-input" name="repeat" type="password" maxlength="128" placeholder="••••••••" autocomplete="new-password">
+        </label>
+
+        <div id="authError" class="account-error" role="alert"></div>
+        <button id="authSubmit" class="account-submit" type="submit">Войти</button>
+      </form>
+
+      <details class="account-server">
+        <summary>Сервер аккаунтов <span id="serverLabel">127.0.0.1:3000</span></summary>
+        <div class="server-row">
+          <input id="serverUrl" class="account-input mono" type="url" spellcheck="false" placeholder="https://auth.example.com">
+          <button id="saveServer" class="btn btn-ghost" type="button">Сохранить</button>
+        </div>
+        <div id="serverStatus" class="server-status"></div>
+        <p class="account-note">Для второго ПК укажи адрес сервера, который печатает NimbusAuthServer. Для интернета нужен https.</p>
+      </details>
+
+      <p class="account-note center">Пароль отправляется только на сервер аккаунтов. На сайте он не хранится.</p>
+    </div>
+
+    <div id="userView" hidden>
+      <div class="account-user">
+        <div id="avatar" class="account-avatar">N</div>
+        <div class="account-user-copy">
+          <h2 id="userName">Player</h2>
+          <span class="account-badge">Аккаунт Nimbus</span>
+        </div>
+        <a class="btn btn-ghost small" href="index.html#download">Скачать</a>
+      </div>
+
+      <div class="account-grid">
+        <div class="account-info">
+          <span>UUID игрока</span>
+          <code id="userUuid" class="mono">—</code>
+        </div>
+        <div class="account-info">
+          <span>Аккаунт создан</span>
+          <b id="userCreated">—</b>
+        </div>
+        <div class="account-info wide">
+          <span>Сервер аккаунтов</span>
+          <b id="userServer" class="mono">—</b>
+        </div>
+      </div>
+
+      <div class="account-actions">
+        <button id="copyUuid" class="btn btn-primary" type="button">Скопировать UUID</button>
+        <button id="openServer" class="btn btn-ghost" type="button">Сменить сервер</button>
+        <button id="logout" class="btn btn-ghost danger" type="button">Выйти</button>
+      </div>
+
+      <p class="account-note center">Этот аккаунт работает в лаунчере, если там указан тот же сервер аккаунтов.</p>
+    </div>
+  </section>
+
+  <section class="account-benefits">
+    <article>
+      <h3>Один ник</h3>
+      <p>Аккаунт хранится на сервере, а не на компьютере. Вход работает на любом ПК.</p>
+    </article>
+    <article>
+      <h3>UUID игрока</h3>
+      <p>UUID совпадает с оффлайн-UUID Minecraft — прогресс и серверы видят одного игрока.</p>
+    </article>
+    <article>
+      <h3>Без почты</h3>
+      <p>Только ник и пароль. Пароль хранится как scrypt-хэш, сессии живут 30 дней.</p>
+    </article>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="brand">
+      <img src="assets/icon.png" alt="Nimbus" width="34" height="34">
+      <span>Nimbus</span>
+    </div>
+    <p>Лаунчер и клиент для Minecraft 1.21.11.</p>
+    <div class="footer-links">
+      <a href="https://t.me/keyraft" target="_blank" rel="noopener">Telegram @keyraft</a>
+      <a href="index.html">Главная</a>
+      <a href="index.html#download">Скачать</a>
+      <span>MIT © 2026</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" hidden></div>
+<script src="script.js"></script>
+<script src="account.js"></script>
+</body>
+</html>
