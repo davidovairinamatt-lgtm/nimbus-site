@@ -74,14 +74,14 @@ git push -u origin main
 
 ## Сервер аккаунтов
 
-Личный кабинет обращается к `NimbusAuthServer` напрямую из браузера. Адрес по умолчанию — `https://nimbus-auth.netlify.app`.
+Личный кабинет обращается к `NimbusAuthServer` напрямую из браузера. Адрес по умолчанию — `https://light-visual-auth.netlify.app`.
 
 Его можно изменить двумя способами:
 
 - на странице `account.html` открыть **«Сервер аккаунтов»**, ввести адрес и нажать «Сохранить»;
 - передать адрес в ссылке: `account.html?server=https://auth.example.com` — он сохранится в localStorage.
 
-Сервер хранит аккаунты, поэтому адрес должен быть постоянным. Сейчас используется бесплатный сервер на Netlify Functions + Blobs: `https://nimbus-auth.netlify.app`, исходники — в репозитории `nimbus-auth-netlify`. В `NimbusAuthServer/README.md` описаны локальный запуск, Docker и Render.
+Сервер хранит аккаунты, поэтому адрес должен быть постоянным. Сейчас используется бесплатный сервер на Netlify Functions + Blobs: `https://light-visual-auth.netlify.app`, исходники — в репозитории `nimbus-auth-netlify`. В `NimbusAuthServer/README.md` описаны локальный запуск, Docker и Render.
 
 ### HTTPS обязателен
 
