@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  var DEFAULT_SERVER = "https://nimbus-auth.netlify.app";
+  var DEFAULT_SERVER = "https://light-visual-auth.netlify.app";
   var SERVER_KEY = "nimbus-auth-url";
   var TOKEN_KEY = "nimbus-site-token";
 
