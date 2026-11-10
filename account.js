@@ -200,7 +200,8 @@
     setStatus("Проверяем сервер…", "");
     try {
       var data = await api("/api/health", { token: null });
-      setStatus("Сервер отвечает: " + (data.service || "nimbus-auth") + " · v" + (data.version || 1), "ok");
+      var serviceName = data.service === "light-visual-auth" ? "Light Visual Auth" : (data.service || "Light Visual Auth");
+      setStatus("Сервер отвечает: " + serviceName + " · v" + (data.version || 1), "ok");
     } catch (error) {
       setStatus(humanError(error), "err");
     }
