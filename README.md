@@ -1,4 +1,4 @@
-# Nimbus Site
+# Light Visual Site
 
 Статический сайт Nimbus: лендинг с загрузками и личный кабинет. Отдельного сервера и сборки не требует — это обычные HTML, CSS и JS.
 
@@ -33,16 +33,16 @@ npx serve .
 Крупные файлы нельзя класть в репозиторий: GitHub отклоняет файлы больше 100 МБ, а ZIP весит 118 МБ. Поэтому сайт публикуется на Pages, а установщик и архив — через Releases.
 
 1. Создай на GitHub репозиторий, например `nimbus-site` (можно приватный или публичный).
-2. Загрузи в него файлы из `NimbusSite`, **кроме** `downloads/NimbusLauncher-Setup-1.3.2.exe` и `downloads/NimbusLauncher-1.3.2-win32-x64.zip`. Папку `downloads` оставь — в ней должны быть jar и `SHA256SUMS.txt` (они маленькие).
-3. Открой **Releases → Draft a new release**. Тег: `v1.3.2`, заголовок: `Nimbus 1.3.2`.
+2. Загрузи в него файлы из `NimbusSite`, **кроме** `downloads/LightVisualLauncher-Setup-1.3.2.exe` и `downloads/LightVisualLauncher-1.3.2-win32-x64.zip`. Папку `downloads` оставь — в ней должны быть jar и `SHA256SUMS.txt` (они маленькие).
+3. Открой **Releases → Draft a new release**. Тег: `v1.3.2`, заголовок: `Light Visual 1.3.2`.
 4. Прикрепи к релизу четыре файла: установщик, ZIP, jar и `SHA256SUMS.txt`. Нажми **Publish release**.
 5. Включи Pages: **Settings → Pages → Source: Deploy from a branch**, ветка `main`, папка `/ (root)`.
 6. Сайт откроется по адресу `https://<user>.github.io/<repo>/`.
 7. Замени ссылки на установщик и ZIP в `index.html` (в hero и в блоке загрузок) на адреса релиза:
 
 ```
-https://github.com/<user>/<repo>/releases/download/v1.3.2/NimbusLauncher-Setup-1.3.2.exe
-https://github.com/<user>/<repo>/releases/download/v1.3.2/NimbusLauncher-1.3.2-win32-x64.zip
+https://github.com/<user>/<repo>/releases/download/v1.3.2/LightVisualLauncher-Setup-1.3.2.exe
+https://github.com/<user>/<repo>/releases/download/v1.3.2/LightVisualLauncher-1.3.2-win32-x64.zip
 ```
 
 Ссылку на jar и `SHA256SUMS.txt` можно оставить локальной, если файлы лежат в репозитории.
@@ -52,7 +52,7 @@ https://github.com/<user>/<repo>/releases/download/v1.3.2/NimbusLauncher-1.3.2-w
 ```
 git init
 git add .
-git commit -m "Nimbus site 1.3.2"
+git commit -m "Light Visual site 1.3.2"
 git branch -M main
 git remote add origin https://github.com/<user>/<repo>.git
 git push -u origin main

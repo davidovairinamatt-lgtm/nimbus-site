@@ -186,14 +186,14 @@
       userCreated.textContent = "—";
     }
     if (userServer) userServer.textContent = serverLabelText(server);
-    document.title = user.username + " — Nimbus";
+    document.title = user.username + " — Light Visual";
   }
 
   function showAuth() {
     user = null;
     userView.hidden = true;
     authView.hidden = false;
-    document.title = "Личный кабинет — Nimbus";
+    document.title = "Личный кабинет — Light Visual";
   }
 
   async function checkHealth() {
